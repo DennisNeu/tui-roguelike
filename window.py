@@ -9,6 +9,7 @@ class Window:
         self.stdscr.refresh()
         curses.curs_set(0)
         curses.noecho()
+        self.stdscr.nodelay(True) # Make getch() non-blocking
 
     def draw_player(self, player_x, player_y):
         """Draws the player on the screen at the given coordinates"""
@@ -17,12 +18,18 @@ class Window:
     def screen_refresh(self):
         """Refreshes the screen"""
         self.stdscr.refresh()
+        
     def screen_clear(self):
         """Clears the screen"""
         self.stdscr.clear()
+
     def get_screen_size(self):
         """Returns the screen size"""
         return self.max_height, self.max_width
+
     def get_input(self):
         """Gets input from the user"""
-        return self.stdscr.getch()
+        try:
+            return self.stdscr.getch()
+        except:
+            return -1

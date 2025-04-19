@@ -16,6 +16,9 @@ class Game:
             self.window.draw_player(self.player.pos_x, self.player.pos_y)
             self.window.screen_refresh()
 
+            sleep(0.05) # Add a small delay to control the frame rate
+
+
     def handle_input(self, keypress):
         if keypress == ord("q"):
             self.running = False
