@@ -15,10 +15,13 @@ class Window:
         """Draws the player on the screen at the given coordinates"""
         self.stdscr.addch(player_y, player_x, "@")
 
+    def draw_random_shit(self):
+        self.stdscr.addch(5, 3, "S")
+
     def screen_refresh(self):
         """Refreshes the screen"""
         self.stdscr.refresh()
-        
+
     def screen_clear(self):
         """Clears the screen"""
         self.stdscr.clear()
