@@ -1,6 +1,6 @@
 # Warhammer ASCII Roguelike (Prototype)
 
-A curses-based ASCII roguelike engine written in Python. Movement, screen handling, and input are structured using clean classes.
+A curses-based ASCII roguelike written in Python. Movement, screen handling, and input are structured using clean classes.
 
 ## Controls
 
