@@ -1,6 +1,7 @@
 """Game class, holds game loop and controls game logic"""
 from player import Player
 from window import Window
+from object import Object
 from time import sleep
 
 
@@ -17,10 +18,9 @@ class Game:
             self.handle_input(keypress)
             self.window.screen_clear()
             self.window.draw_player(self.player.pos_x, self.player.pos_y)
-            self.window.draw_random_shit()
             self.window.screen_refresh()
 
-            sleep(0.05) # Add a small delay to control the frame rate
+            sleep(0.05)  # Add a small delay to control the frame rate
 
     def handle_input(self, keypress):
         if keypress == ord("q"):

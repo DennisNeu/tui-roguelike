@@ -1,5 +1,6 @@
 import curses
 
+
 class Window:
     def __init__(self, stdscr):
         self.stdscr = stdscr
@@ -9,14 +10,15 @@ class Window:
         self.stdscr.refresh()
         curses.curs_set(0)
         curses.noecho()
-        self.stdscr.nodelay(True) # Make getch() non-blocking
+        self.stdscr.nodelay(True)  # Make getch() non-blocking
 
     def draw_player(self, player_x, player_y):
         """Draws the player on the screen at the given coordinates"""
         self.stdscr.addch(player_y, player_x, "@")
 
-    def draw_random_shit(self):
-        self.stdscr.addch(5, 3, "S")
+    def draw_list(self, objects):
+        for object in objects:
+            self.stdscr.addch(object.pos_y, object.pos_x, object.char)
 
     def screen_refresh(self):
         """Refreshes the screen"""
